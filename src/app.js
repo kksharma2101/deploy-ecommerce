@@ -6,8 +6,8 @@ import connectDb from "../config/db.config.js";
 import authRouter from "../routers/auth.router.js";
 import categoryRouter from "../routers/categoryRoutes.js";
 import productRouter from "../routers/productRoutes.js";
-import path from "path";
-import { fileURLToPath } from "url";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -25,7 +25,7 @@ app.use("/api", authRouter);
 app.use("/api/category", categoryRouter);
 app.use("/api/product", productRouter);
 
-app.get("/*", function (req, res) {
+app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
