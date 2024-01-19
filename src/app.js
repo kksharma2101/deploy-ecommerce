@@ -25,7 +25,7 @@ app.use("/api", authRouter);
 app.use("/api/category", categoryRouter);
 app.use("/api/product", productRouter);
 
-app.use("", function (req, res) {
+app.use("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
