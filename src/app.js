@@ -6,8 +6,8 @@ import connectDb from "../config/db.config.js";
 import authRouter from "../routers/auth.router.js";
 import categoryRouter from "../routers/categoryRoutes.js";
 import productRouter from "../routers/productRoutes.js";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
